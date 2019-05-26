@@ -44,6 +44,10 @@ myWorkspaces            = clickable . (map dzenEscape) $ ["1","2","3","4","5"]
                             (i,ws) <- zip [1..] l,
                             let n = i ]
 
+spawnMyApps :: IO()
+spawnMyApps = do
+  spawn "thunderbird"
+
 -- Layouts
 -- the default layout is fullscreen with smartborders applied to all
 --- myLayoutHook = simplestFloat
@@ -52,11 +56,11 @@ myLayoutHook = simplestFloat
 -- Window management
 --
 myManageHook = composeAll
-    [ placeHook (withGaps (20,50,20,50) simpleSmart)
-    , className =? "MPlayer"        --> doFloat
+    [
+      className =? "MPlayer"        --> doFloat
     , className =? "Vlc"            --> doFloat
     , className =? "Gimp"           --> doFloat
-    , className =? "Firefox"        --> doF (W.shift (myWorkspaces !! 1))
+    , className =? "Firefox"         --> doFloat 
     , className =? "Thunderbird"    --> doF (W.shift (myWorkspaces !! 2))
     , className =? "XCalc"          --> doFloat
     , className =? "Chromium"       --> doF (W.shift (myWorkspaces !! 1)) -- send to ws 2
@@ -69,8 +73,8 @@ myManageHook = composeAll
 myLogHook h = dynamicLogWithPP $ myDzenPP { ppOutput = hPutStrLn h }
 
 myDzenStatus = "dzen2 -w '320' -ta 'l'" ++ myDzenStyle
-myDzenConky  = "conky -c ~/.xmonad/conkyrc | dzen2 -x '320' -w '704' -ta 'r'" ++ myDzenStyle
-myDzenStyle  = " -h '20' -fg '#777777' -bg '#222222' -fn 'arial:bold:size=11'"
+myDzenConky  = "conky -c ~/.xmonad/conkyrc | dzen2 -x '320' -ta 'r'" ++ myDzenStyle
+myDzenStyle  = " -h '20' -fg '#777777' -bg '#222222' -fn 'arial:bold:size=9'"
 
 myDzenPP  = dzenPP
     { ppCurrent = dzenColor "#3399ff" "" . wrap " " " "
