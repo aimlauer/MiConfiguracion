@@ -22,12 +22,13 @@ import qualified XMonad.StackSet as W   -- manageHook rules
 main = do
         status <- spawnPipe myDzenStatus    -- xmonad status on the left
         conky  <- spawnPipe myDzenConky     -- conky stats on the right
-        xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig 
+        xmonad $ withUrgencyHook NoUrgencyHook $ ewmh defaultConfig 
             { modMask            = mod4Mask
             , terminal           = "terminator"
             , borderWidth        = 4
             , normalBorderColor  = "#dddddd"
-            , focusedBorderColor = "#0023ff"
+            , focusedBorderColor = "#5668c2"
+            , handleEventHook    = handleEventHook defaultConfig <+> fullscreenEventHook
             , workspaces = myWorkspaces
             , layoutHook = myLayoutHook
             , manageHook = manageDocks <+> doCenterFloat <+> myManageHook
@@ -56,11 +57,11 @@ myLayoutHook = simplestFloat
 -- Window management
 --
 myManageHook = composeAll
-    [
-      className =? "MPlayer"        --> doFloat
+    [ isFullscreen                  --> doFullFloat
+    , className =? "MPlayer"        --> doFloat
     , className =? "Vlc"            --> doFloat
     , className =? "Gimp"           --> doFloat
-    , className =? "Firefox"         --> doFloat 
+    , className =? "Firefox"        --> doFloat 
     , className =? "Thunderbird"    --> doF (W.shift (myWorkspaces !! 2))
     , className =? "XCalc"          --> doFloat
     , className =? "Chromium"       --> doF (W.shift (myWorkspaces !! 1)) -- send to ws 2
@@ -74,10 +75,10 @@ myLogHook h = dynamicLogWithPP $ myDzenPP { ppOutput = hPutStrLn h }
 
 myDzenStatus = "dzen2 -w '320' -ta 'l'" ++ myDzenStyle
 myDzenConky  = "conky -c ~/.xmonad/conkyrc | dzen2 -x '320' -ta 'r'" ++ myDzenStyle
-myDzenStyle  = " -h '20' -fg '#777777' -bg '#222222' -fn 'arial:bold:size=9'"
+myDzenStyle  = " -h '20' -bg '#191919' -fn 'arial:bold:size=9'"
 
 myDzenPP  = dzenPP
-    { ppCurrent = dzenColor "#3399ff" "" . wrap " " " "
+    { ppCurrent = dzenColor "#a1abf0" "" . wrap " " " "
     , ppHidden  = dzenColor "#dddddd" "" . wrap " " " "
     , ppHiddenNoWindows = dzenColor "#777777" "" . wrap " " " "
     , ppUrgent  = dzenColor "#ff0000" "" . wrap " " " "
