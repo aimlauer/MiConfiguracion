@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=XSession
+Name=Dwm
+Comment=Lightweight X11 tiled window manager written in C
+Exec=/home/nist778/dwm-6.0/run-dwm
+Icon=dwm
+Terminal=false
+StartupNotify=false
+Categories=Application;
