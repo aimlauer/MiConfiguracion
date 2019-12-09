@@ -1,2 +1,2 @@
 la configuración de tmux es de geohot, pongo todo junto acá para que se me sea más fácil cuando reinstalo mi sistema operativo o quiero usar tmux con esta configuración en otra computadora.
-dwm.desktop lo uso porque uso lightdm, y por lee el .xinitrc
+dwm.desktop lo uso porque uso lightdm, y no lee el .xinitrc
