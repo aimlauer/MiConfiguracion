@@ -1,3 +1,10 @@
+cit
+dt<
+Siempre uso vim-plug pero debería probar vundle.
+actual theme: orbital (https://github.com/fcpg/vim-orbital)
+
+actual .vimrc:
+
 syntax on
 set number
 "let g:gruvbox_termcolors=256
@@ -21,15 +28,11 @@ Plug 'fcpg/vim-orbital'
 "Plug 'tpope/vim-fugitive'
 "Plug 'vim-utils/vim-man'
 "Plug 'sheerun/vim-polyglot'
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'phanviet/vim-monokai-pro'
-Plug 'owickstrom/vim-colors-paramount'
 " vim-plug
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
 Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
 
-"colorscheme gruvbox
-"colorscheme orbital
-colorscheme paramount
+colorscheme orbital
