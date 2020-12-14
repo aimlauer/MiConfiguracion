@@ -1,9 +1,13 @@
 autocmd BufWritePost resume_spanish.tex !pdflatex /home/hizmy/hizmy/MiCV/pro/resume_spanish.tex
 autocmd BufWritePost resume_english.tex !pdflatex /home/hizmy/hizmy/MiCV/pro/resume_english.tex
 
-set termguicolors
+"set termguicolors
 "let g:carbonized_dark_LineNr = 'off'
 "let g:carbonized_light_LineNr = 'off'
+set hlsearch    " highlight all search results
+set ignorecase  " do case insensitive search
+set incsearch   " show incremental search results as you type
+set noswapfile  " disable swap file
 
 
 syntax on
@@ -48,4 +52,4 @@ call plug#end()
 "colorscheme orbital
 "colorscheme onehalfdark
 "colorscheme archery
-colorscheme lucid 
+colorscheme elflord
