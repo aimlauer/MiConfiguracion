@@ -1,11 +1,10 @@
 autocmd BufWritePost resume_spanish.tex !pdflatex /home/hizmy/hizmy/MiCV/pro/resume_spanish.tex
 autocmd BufWritePost resume_english.tex !pdflatex /home/hizmy/hizmy/MiCV/pro/resume_english.tex
 
-"set termguicolors
+set termguicolors
 "let g:carbonized_dark_LineNr = 'off'
 "let g:carbonized_light_LineNr = 'off'
-set hlsearch    " highlight all search results
-set ignorecase  " do case insensitive search
+set hlsearch    " highlight all search results set ignorecase  " do case insensitive search
 set incsearch   " show incremental search results as you type
 set noswapfile  " disable swap file
 
@@ -13,7 +12,7 @@ set noswapfile  " disable swap file
 syntax on
 set number
 "let g:gruvbox_termcolors=256
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=4 shiftwidth=4 expandtab
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
     execute "set <xUp>=\e[1;*A"
@@ -40,6 +39,7 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'phanviet/vim-monokai-pro'
 Plug 'owickstrom/vim-colors-paramount'
 " vim-plug
+Plug 'romgrk/doom-one.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'nightsense/carbonized'
 Plug 'ajmwagar/vim-deus'
@@ -52,4 +52,5 @@ call plug#end()
 "colorscheme orbital
 "colorscheme onehalfdark
 "colorscheme archery
-colorscheme elflord
+colorscheme doom-one
+"colorscheme desert
