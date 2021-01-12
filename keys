@@ -58,10 +58,10 @@ Mod4 Shift Tab :PrevTab
 # Mod4 9 :Tab 9
 
 # open a terminal
-Mod4 Shift 36 :Exec x-terminal-emulator
+Mod4 Shift 36 :Exec lxterminal
 
 # open a dialog to run programs
-Mod4 Shift 33 :Exec fbrun
+Mod4 Shift 33 :Exec dmenu_run
 
 # volume settings, using common keycodes
 # if these don't work, use xev to find out your real keycodes
@@ -79,14 +79,17 @@ Mod4 Shift c :Close
 # open the window menu
 Mod4 space :WindowMenu
 
+107 :Exec xfce4-screenshooter
 # exit fluxbox
 Mod4 Shift q :Exit
+# screensaver
+Mod4 Shift l :Exec xscreensaver-command -lock
 
 # change to previous/next workspace
 # Control Mod1 Left :PrevWorkspace
 # Control Mod1 Right :NextWorkspace
 
-1 send the current window to previous/next workspace
+# 1 send the current window to previous/next workspace
 # Mod4 Left :SendToPrevWorkspace
 # Mod4 Right :SendToNextWorkspace
 
