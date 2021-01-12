@@ -1,0 +1,11 @@
+[app] (name=fbrun)
+  [Position]	(WINCENTER)	{0 0}
+  [Layer]	{2}
+  [Workspace]   {2}
+[end]
+[app] (class=thunderbird)
+  [Maximized]	{no}
+  [Position]	(WINCENTER)	{0 0}
+  [Workspace]   {2}
+  [Head]	{2}
+[end]
