@@ -7,6 +7,7 @@ set termguicolors
 set hlsearch    " highlight all search results set ignorecase  " do case insensitive search
 set incsearch   " show incremental search results as you type
 set noswapfile  " disable swap file
+set ignorecase
 
 
 syntax on
@@ -26,25 +27,28 @@ set background=dark
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'tweekmonster/gofmt.vim'
-"Plug 'fcpg/vim-orbital'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'tpope/vim-fugitive'
-"Plug 'vim-utils/vim-man'
-"Plug 'sheerun/vim-polyglot'
+" Theme
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Buscador de archivos y también posee el comando :W(Windows) para navegar a través de las tabs
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plug 'phanviet/vim-monokai-pro'
-Plug 'owickstrom/vim-colors-paramount'
+" Plugin para detectar errores de sintáxis programando en Python.
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" Theme
+"Plug 'phanviet/vim-monokai-pro'
+" Theme
+"Plug 'owickstrom/vim-colors-paramount'
 " vim-plug
+" Theme
 Plug 'romgrk/doom-one.vim'
+" Theme
 Plug 'gruvbox-community/gruvbox'
+" Theme
 Plug 'nightsense/carbonized'
-Plug 'ajmwagar/vim-deus'
+" Theme
+"Plug 'ajmwagar/vim-deus'
 Plug 'Badacadabra/vim-archery'
-Plug 'cseelus/vim-colors-lucid'
+"Plug 'cseelus/vim-colors-lucid'
 
 call plug#end()
 
@@ -52,5 +56,5 @@ call plug#end()
 "colorscheme orbital
 "colorscheme onehalfdark
 "colorscheme archery
-colorscheme doom-one
-"colorscheme desert
+"colorscheme delek
+"colorscheme murphy
